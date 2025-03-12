@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from flask_sqlalchemy import SQLAlchemy
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("postgresql://mydatabase_k2em_user:IFMTzoUFcxtoRMl9gXedWCpBIrpr0RKp@dpg-cv8i57aj1k6c73a9fjbg-a/mydatabase_k2em", "sqlite:///users.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL", "sqlite:///users.db")
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
